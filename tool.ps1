@@ -11,6 +11,14 @@ $ErrorActionPreference = 'Stop'
 $リポジトリのルート = $PSScriptRoot
 
 $作業一覧 = @(
+    @{
+        名前 = 'ビルド'
+        説明 = 'ソリューション OneONet.sln を global.json で固定した SDK でビルドする。警告は全部エラーとして扱う'
+        実行 = {
+            dotnet build (Join-Path $リポジトリのルート 'OneONet.sln') --no-incremental
+            if ($LASTEXITCODE -ne 0) { throw "ビルドが失敗した。終了コードは $LASTEXITCODE である" }
+        }
+    }
 )
 
 function 一覧を表示する {
