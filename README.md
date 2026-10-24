@@ -2,11 +2,9 @@
 
 OneOnet のネイティブ版である。WinUI 3 + .NET 11 / C# 15 で、現行の Python + TypeScript の Web UI 版を作り直す。まだコードは無く、リポジトリの土台(規約・入口・索引)だけがある。
 
-## 旧リポジトリと試作
+## 旧版と試作
 
-- 旧リポジトリ: 旧版(非公開のリポジトリ RefucteringVoiroStudio)
-- 試作: 旧リポジトリの `prototypes/OneOnet.Native`
-- 調査と試作の記録(旧リポジトリの `_doc/企画設計実装解説/50_仕様検討・提案/Draft/`): `試作_2026-10-24_WinUI3と音声接続.md`・`調査_2026-10-24_CPU推論の音声認識とかな出力.md`・`調査_2026-10-24_SengenUI画面の静的と動的の割合.md`
+現行の Web UI 版は、旧版(非公開のリポジトリ RefucteringVoiroStudio)である。ネイティブ版の試作と、試作を決めた調査は、旧版の中にあり、このリポジトリからは辿れない。このリポジトリが受け継ぐ判断は、規約と設計の文書の中に理由ごと書く。
 
 ## ツールの入口
 
@@ -30,7 +28,7 @@ OneOnet のネイティブ版である。WinUI 3 + .NET 11 / C# 15 で、現行�
 | [CLAUDE.md](CLAUDE.md) | サブエージェントと親のセッションが読むものの入口 |
 | [.claude/commands/rule.md](.claude/commands/rule.md) | 役割と触る領域ごとに読む規約の表 |
 | [.claude/規約/将軍.md](.claude/規約/将軍.md) | 親のセッション(将軍)が読むものと引き継ぎの運用 |
-| [.claude/規約/リポジトリの地図.md](.claude/規約/リポジトリの地図.md) | ツールの入口、文書置き場、旧リポジトリと試作の場所、まだ無いもの |
+| [.claude/規約/リポジトリの地図.md](.claude/規約/リポジトリの地図.md) | ツールの入口、文書置き場、旧版と試作の扱い、.NET SDK、まだ無いもの |
 | [.claude/規約/コード/coding_rule.md](.claude/規約/コード/coding_rule.md) | 設計原則(型安全、DTO、Result 型、FP/OOP ハイブリッド) |
 | [.claude/規約/コード/csharp_coding_rules.md](.claude/規約/コード/csharp_coding_rules.md) | C# 固有の構文・ツール・命名 |
 | [.claude/規約/コード/判別共用体の失敗パターン.md](.claude/規約/コード/判別共用体の失敗パターン.md) | 判別共用体の設計失敗パターンとチェックリスト |
