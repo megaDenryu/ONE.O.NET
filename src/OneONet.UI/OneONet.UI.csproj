@@ -9,5 +9,6 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.5.1" />
     <ProjectReference Include="../OneONet.Domain/OneONet.Domain.csproj" />
     <ProjectReference Include="../OneONet.Application/OneONet.Application.csproj" />
+    <ProjectReference Include="../../submodules/SengenWinUI3/src/SengenWinUI3/SengenWinUI3.csproj" />
   </ItemGroup>
 </Project>

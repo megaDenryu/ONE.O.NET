@@ -6,6 +6,16 @@ OneOnet のネイティブ版である。WinUI 3 + .NET 11 / C# 15 で、現行�
 
 現行の Web UI 版は、旧版(非公開のリポジトリ RefucteringVoiroStudio)である。ネイティブ版の試作と、試作を決めた調査は、旧版の中にあり、このリポジトリからは辿れない。このリポジトリが受け継ぐ判断は、規約と設計の文書の中に理由ごと書く。
 
+## クローン
+
+画面の部品のライブラリ SengenWinUI3 を git のサブモジュールとして `submodules/SengenWinUI3` に置いているため、サブモジュールごとクローンする。
+
+```powershell
+git clone --recurse-submodules https://github.com/megaDenryu/ONE.O.NET.git
+```
+
+`--recurse-submodules` を付けずにクローンしたときは、リポジトリのルートで `git submodule update --init` を実行する。ビルドには、`global.json` で固定した .NET SDK(.NET 11 RC2)を導入する。
+
 ## ツールの入口
 
 ツールはすべて `tool.ps1` に集約する。
@@ -29,7 +39,7 @@ OneOnet のネイティブ版である。WinUI 3 + .NET 11 / C# 15 で、現行�
 | [CLAUDE.md](CLAUDE.md) | サブエージェントと親のセッションが読むものの入口 |
 | [.claude/commands/rule.md](.claude/commands/rule.md) | 役割と触る領域ごとに読む規約の表 |
 | [.claude/規約/将軍.md](.claude/規約/将軍.md) | 親のセッション(将軍)が読むものと引き継ぎの運用 |
-| [.claude/規約/リポジトリの地図.md](.claude/規約/リポジトリの地図.md) | ツールの入口、文書置き場、旧版と試作の扱い、.NET SDK、まだ無いもの |
+| [.claude/規約/リポジトリの地図.md](.claude/規約/リポジトリの地図.md) | ツールの入口、文書置き場、旧版と試作の扱い、.NET SDK、SengenWinUI3 のサブモジュール、まだ無いもの |
 | [.claude/規約/コード/coding_rule.md](.claude/規約/コード/coding_rule.md) | 設計原則(型安全、DTO、Result 型、FP/OOP ハイブリッド) |
 | [.claude/規約/コード/csharp_coding_rules.md](.claude/規約/コード/csharp_coding_rules.md) | C# 固有の構文・ツール・命名 |
 | [.claude/規約/コード/判別共用体の失敗パターン.md](.claude/規約/コード/判別共用体の失敗パターン.md) | 判別共用体の設計失敗パターンとチェックリスト |
@@ -48,6 +58,7 @@ OneOnet のネイティブ版である。WinUI 3 + .NET 11 / C# 15 で、現行�
 |---|---|
 | `OneONet.sln` | ソリューション |
 | `src/` | 層ごとの C# のプロジェクト |
+| `submodules/SengenWinUI3` | 画面の部品のライブラリ(git のサブモジュール) |
 | `Directory.Build.props` | 全プロジェクトに共通の設定 |
 | `global.json` | ビルドに使う .NET SDK の版 |
 | `_doc/設計/` | 生存型文書 |

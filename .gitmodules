@@ -1,0 +1,3 @@
+[submodule "submodules/SengenWinUI3"]
+	path = submodules/SengenWinUI3
+	url = https://github.com/megaDenryu/SengenWinUI3.git
